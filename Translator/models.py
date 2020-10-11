@@ -107,8 +107,6 @@ class TranslatorModelManager(models.Manager):
 				
 
 
-	
-
 
 
 	def get_time_frame_21st(self):
@@ -128,6 +126,8 @@ class TranslatorModelManager(models.Manager):
 		return l_21
 
 
+	
+	
 
 
 	def retrieve_sorted_subjects_20(self):
@@ -469,27 +469,4 @@ class Work(models.Model):
 
 
 	 
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
