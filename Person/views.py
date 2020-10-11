@@ -78,7 +78,6 @@ def signup_function_view(request):
 
 def user_account_view(request, id):
 
-    # obj = get_object_or_404(UserMember, id=id)
 
     User=get_user_model()
 
@@ -115,8 +114,7 @@ def settings_view(request,id):
 
     form = SettingsForm(request.POST or None, instance=obj)
 
-    context_dictionary = {#'object' : obj, 
-    'form' : form, }
+    context_dictionary = {'form' : form, }
 
     if form.is_valid():
 
@@ -140,11 +138,7 @@ def user_account_delete_view(request, id):
 
     User=get_user_model()
 
-    # obj = User.objects.get(id=id)
-
     obj = get_object_or_404(User, id=id)
-
-    ##POST request
 
     if request.method== 'POST':
 
@@ -207,8 +201,6 @@ def add_contact_details_view_function(request):
 def edit_contact_information(request):
 
     if ContactInformation.objects.filter(user=request.user):
-
-    # obj=get_object_or_404(ContactInformation, user=request.user)
 
 
         form = ContactInformation_Form(request.POST or None,  instance=obj)
