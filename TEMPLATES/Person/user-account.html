@@ -1,0 +1,77 @@
+ {% extends 'index_simple_layout.html' %}
+
+
+
+{% block main %}
+
+
+ <style>
+
+  
+.panel-footer{
+  background-color: #f2f3f4  ;
+  height: 500px;
+  border-color:   #f2f3f4  ;
+  color: #FFFFFF;
+  max-width: 1200px;
+  
+
+ }
+
+
+
+
+/*   .list-group-item {   background-color:#f8f9f9;
+                        height:150px;
+                      border-color: #f8f9f9;
+                      color: #FFFFFF;
+                      max-width: 1200px;  }*/
+
+
+h5 { color:  #1f618d; }
+
+
+ </style>
+
+
+
+
+<h1> Account </h1>
+
+
+
+<br>
+
+
+<div class="row">
+    <div class="col-lg-12 col-lg-offset-0">
+     
+    
+      <div class="panel-footer">
+
+
+      <h5><a href="{% url 'retrieve_orders_associated_with_user'   %}"class="button">Orders</a></h5>
+
+       <h5><a href="{% url 'returned_items_view' %}"class="button">Returned items</a></h5>
+
+       <h5><a href="{% url 'settings_view' id=obj.id   %}"class="button">Edit settings</a></h5>
+
+         <h5><a href="{% url 'user_account_delete_view'  id=obj.id %}"class="button">Delete account</a></h5>
+
+      <h5><a href="{% url 'logout' %}"class="button">Log out</a></h5>
+
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock main %}

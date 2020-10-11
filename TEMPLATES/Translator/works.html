@@ -1,0 +1,140 @@
+{% extends 'translators.html' %}
+
+
+
+{% block main %}
+
+
+
+<h5> Works </h5>
+
+<br>
+
+
+<h5><strong>E</strong></h5>
+
+
+
+{% for item in var.sorted_works_list %}
+
+{% if item|first in 'e'%}
+
+<p>{{ item }}</p>
+
+{% endif %}
+
+{% endfor %}
+
+
+
+<br>
+<br>
+
+
+
+
+<h5><strong>F</strong></h5>
+
+
+
+{% for item in var.sorted_works_list %}
+
+
+{% if item|first in 'f'%}
+
+<p>{{ item}}</p>
+
+{% endif %}
+
+{% endfor %}
+
+
+
+
+<br>
+<br>
+
+
+
+
+
+<h5><strong>N</strong></h5>
+
+
+
+{% for item in var.sorted_works_list %}
+
+{% if item|first in 'n'%}
+
+<p>{{ item}}</p>
+
+{% endif %}
+
+{% endfor %}
+
+
+
+<br>
+
+<br>
+
+
+
+
+<h5><strong>S</strong></h5>
+
+
+
+{% for item in var.sorted_works_list %}
+
+{% if item|first in 's'%}
+
+<p>{{ item}}</p>
+
+{% endif %}
+
+{% endfor %}
+
+
+
+<br>
+<br>
+
+
+
+
+<h5><strong>T</strong></h5>
+
+
+{% for item in var.sorted_works_list %}
+
+{% if item|first in 't'%}
+
+<p>{{ item }}</p>
+
+{% endif %}
+
+{% endfor %}
+
+
+
+<br>
+<br>
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

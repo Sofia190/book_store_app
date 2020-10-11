@@ -1,0 +1,86 @@
+{% extends 'index_simple_layout.html' %}
+
+
+
+{% block main %}
+
+
+
+
+
+</style>
+
+<h6>Orders to be returned </h6>
+
+
+<br>
+
+<br>
+
+
+{% for obj in var %}
+<!--  <p><h6>Return request nr. {{obj.id}}</h6></p> -->
+
+ {% for item in obj.orders.all %}
+
+ <p><h6>Order nr. {{ item.id }}</h6></p>
+
+ <p>created {{item.date_field}}
+
+ 	{% for work in item.works.all%}
+
+ 	<p>{{ work.name}}</p>
+ 	{%endfor%}
+
+ 	{% for card in item.cards.all%}
+
+ 	<p>{{card.name}}</p>
+
+
+ 	{% endfor %}
+
+
+ 	<br>
+ 	<br>
+
+ {% endfor %}
+
+
+ {% endfor %}
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

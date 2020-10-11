@@ -1,0 +1,169 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+{% load mathfilters %}
+
+
+
+{% block main %}
+
+<style>
+
+ul {
+  padding-left: 10px;
+}
+
+
+</style>
+
+
+<div class="row">
+    <div class="col-lg-12 col-lg-offset-0">
+     
+    
+      <div class="panel-footer">
+
+<ul>
+
+<h5>Invoice</h5>
+
+<br>
+
+Nr. {{number}}
+
+<br>
+
+From : {{from_person}}
+
+<br>
+
+Seller address: {{from_person_address}}
+
+<br>
+
+To: {{to_person}}
+
+<br>
+
+Address : {{to_person_address}}
+
+<br>
+
+Date: {{date}}
+
+<br>
+
+
+Term: {{term}}
+
+<br>
+
+ <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+<h5> Your orders contain these articles</h5>
+
+ <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+<br>
+
+{% if var.orders_associated.all %}
+
+{% for item in var.orders_associated.all %}
+
+
+{% for work in item.works.all %}
+
+
+
+<p>{{item.id}} &ensp;  &ensp;  &ensp;  &ensp;  &ensp;  &ensp; {{work.name}}</p>
+
+{% endfor %}
+
+
+
+	{% for card in item.cards.all %}
+
+		<p>{{item.id}} &ensp;  &ensp;  &ensp;  &ensp;  &ensp;  &ensp; {{card.name}}</p>
+
+{% endfor %}
+
+{% endfor %}
+
+{% endif %}
+
+
+<br>
+
+<br>
+
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+
+<p>Total price of the orders: {{var.value_total_price_items}} $   </p>
+
+<p>Total price of works: {{var.value_total_price_works}} $   </p>
+   
+<p>Total price of cards: {{var.value_total_price_cards}} $   <p>
+
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+<p>Details of the orders</p>
+
+
+<br>
+
+{% if var.orders_associated.all %}
+
+{% for item in var.orders_associated.all%}
+
+
+
+<p> {{item.id}}  &ensp;  &ensp;  &ensp;  &ensp;  &ensp;  &ensp;   {{ item.retrieve_items_price}} $  &ensp;  &ensp;  &ensp;  &ensp;  &ensp;  &ensp; {{item.date_field}} 
+
+&ensp;  &ensp;  &ensp;  &ensp;  &ensp;  &ensp;
+{{item.works.count| addition:item.cards.count}}
+
+
+
+</p> 
+
+
+
+{% endfor %}
+
+{% endif %}
+
+
+
+
+
+</ul>
+
+       </div>
+
+     </div>
+
+   </div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

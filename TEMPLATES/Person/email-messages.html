@@ -1,0 +1,68 @@
+{% extends 'index_simple_layout.html' %}
+
+
+
+
+{% block main %}
+
+<style>
+
+  div {
+ 
+     overflow-wrap: break-word;}
+
+
+</style>
+
+
+
+
+
+<div class="row">
+    <div class="col-lg-12 col-lg-offset-0">
+        <!-- <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Message board</h3>
+            </div> -->
+   
+   
+
+            <h5>Email</h5>
+
+            {% if qs.receive_marketing_emails == True %}
+
+
+            {% for object in qs1 %}
+				<li class="list-group-item">
+  				
+               		 <strong>Title: {{object.title}}</a></strong> 
+                   <p>From : {{object.from_user}}</p>
+
+
+                    <p>To :  {{to_user}}
+
+                    </p>
+                    <p>Message: {{object.message}}</p>
+                    <p>Sent: {{object.sent}}</p>
+                   
+                
+           		
+					
+
+				</li>
+
+
+
+			{% endfor %}
+
+      {% endif %}
+
+
+<!--         </div>
+ -->    </div>
+</div>
+
+
+
+
+{% endblock %}

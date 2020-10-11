@@ -1,0 +1,507 @@
+{% extends 'index_simple_layout.html' %}
+
+
+
+{% block main %}
+
+<style>
+
+	.boxed {
+  border: 1px solid black ;
+  width:300px;
+  height:285px;
+} 
+
+  .boxed1 {
+  border: 1px solid black;
+  width:285px;
+  height:285px;
+} 
+
+
+  .boxed2 {
+  border: 1px solid black ;
+  width:285px;
+  height:285px;
+} 
+
+
+/*.nextto{
+  display: inline-block;
+  width: 30%;
+
+}*/
+
+
+.main-container: {
+   display: flex;
+   flex-direction: column;
+ }
+
+/* .imageContainer {
+       width:300px; 
+       height:300px; 
+       background-image: url("https://avatars1.githubusercontent.com/u/44669618?s=460&u=47fcf4c39c2685d842eed48c5b6b254318003357&v=4" );
+ }
+*/
+
+
+
+ /* Container holding the image and the text */
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 15%;
+  left: 14%;
+  transform: translate(-50%, -50%);
+} 
+
+.centered1{
+  position: absolute;
+  top: 15%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+} 
+
+
+.centered2{
+  position: absolute;
+  top: 15%;
+  left: 62%;
+  transform: translate(-50%, -50%);
+} 
+
+
+.centered3{
+  position: absolute;
+  top: 15%;
+  left: 86%;
+  transform: translate(-50%, -50%);
+} 
+
+.centered4{
+  position: absolute;
+  top: 50%;
+  left: 14%;
+  transform: translate(-50%, -50%);
+} 
+
+
+.centered5{
+  position: absolute;
+  top: 50%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+} 
+
+
+.centered6{
+  position: absolute;
+  top: 50%;
+  left: 62%;
+  transform: translate(-50%, -50%);
+} 
+
+
+.centered7{
+  position: absolute;
+  top: 50%;
+  left: 86%;
+  transform: translate(-50%, -50%);
+} 
+
+
+
+.centered8{
+  position: absolute;
+  top: 85%;
+  left: 14%;
+  transform: translate(-50%, -50%);
+} 
+
+
+.centered9{
+  position: absolute;
+  top: 85%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+} 
+
+
+.centered10{
+  position: absolute;
+  top: 85%;
+  left: 62%;
+  transform: translate(-50%, -50%);
+} 
+
+
+.centered11{
+  position: absolute;
+  top: 85%;
+  left: 86%;
+  transform: translate(-50%, -50%);
+} 
+
+
+
+
+
+
+
+/* Bottom left text */
+/*.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}*/
+
+/* Top left text */
+/*.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}*/
+
+/* Top right text */
+/*.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+*/
+/* Bottom right text */
+/*.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}*/
+
+
+
+
+
+
+
+</style>
+
+
+
+
+  <div style="display: flex; flex-direction: row; ">  <!-- justify-content: space-between">
+ -->
+  <div class="boxed">
+ <!--  <img src="https://avatars1.githubusercontent.com/u/44669618?s=460&u=47fcf4c39c2685d842eed48c5b6b254318003357&v=4" width="270" height="270"> -->
+
+<!--  <div class="imageContainer">Some Text</div>
+
+
+</div>
+  -->
+
+<div class="imageContainer">
+
+<img src="https://i.pinimg.com/originals/4c/0c/a1/4c0ca1235a372e40f57a670415e67ed8.jpg" alt="Author1" style="width:100%">
+
+  <div class="centered">
+
+   <p><h3><a href="{% url 'translators_view_20' %}"  >Authors20</a></h3></p>
+
+
+  
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+</div>
+
+
+ 
+
+   <div class="boxed">
+
+    <div class="imageContainer">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRR2QCFwie4PSfiI22b8q-K4cJYzVcCWdkOlQ&amp;usqp=CAU" alt="Author" style="width:100%">
+
+  <div class="centered1">
+
+   <p><h3><a href="{% url 'translators_view_21' %}" >Authors21</a></h3></p>
+
+
+ 
+
+
+
+   </div>
+
+ </div>
+
+</div>
+
+
+
+
+ <div class="boxed">
+
+ <div class="imageContainer">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTcPA-Rs5xiuIyIs2W9ikWP9YqqsdI3UjnoGw&amp;usqp=CAU" alt="Author" style="width:100%">
+
+  <div class="centered2">
+
+   <p><h3><a href="{% url 'salvetei_view' %}">Authors2</a></h3></p>
+
+   </div>
+
+ </div>
+
+
+</div>  
+
+
+
+
+
+<div class="boxed">
+
+
+
+ <div class="imageContainer">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR3zbl4Ag0Y76KBK4D8HhUsmhHc9l9kbKIiDQ&amp;usqp=CAU" alt="Author" style="width:100%">
+
+  <div class="centered3">
+
+   <p><h3><a href="{% url 'salvetei_view' %}">Authors3</a></h3></p>
+
+   </div>
+
+ </div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+<br>
+
+
+<!-- 
+<div class="main-container">
+ 
+
+</div>
+ -->
+<div style="display: flex; flex-direction: row; "> 
+
+
+<div class="boxed1">
+
+
+
+ <div class="imageContainer">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR3zbl4Ag0Y76KBK4D8HhUsmhHc9l9kbKIiDQ&amp;usqp=CAU" alt="Author" style="width:100%">
+
+  <div class="centered4">
+
+   <p><h3><a href="{% url 'salvetei_view' %}">Authors4</a></h3></p>
+
+   </div>
+
+ </div>
+
+
+</div>
+
+
+
+
+<div class="boxed1">
+
+
+
+ <div class="imageContainer">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTcPA-Rs5xiuIyIs2W9ikWP9YqqsdI3UjnoGw&amp;usqp=CAU" alt="Author" style="width:100%">
+
+  <div class="centered5">
+
+   <p><h3><a href="{% url 'salvetei_view' %}">Authors5</a></h3></p>
+
+   </div>
+
+ </div>
+
+
+</div>
+
+
+
+
+<div class="boxed1">
+
+
+
+ <div class="imageContainer">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRR2QCFwie4PSfiI22b8q-K4cJYzVcCWdkOlQ&amp;usqp=CAU" alt="Author" style="width:100%">
+
+  <div class="centered6">
+
+   <p><h3><a href="{% url 'salvetei_view' %}">Authors6</a><h3></p>
+
+   </div>
+
+ </div>
+
+
+</div>
+
+
+
+<div class="boxed1">
+
+
+
+ <div class="imageContainer">
+
+<img src="https://i.pinimg.com/originals/4c/0c/a1/4c0ca1235a372e40f57a670415e67ed8.jpg" alt="Author" style="width:100%">
+
+  <div class="centered7">
+
+   <p><h3><a href="{% url 'salvetei_view' %}">Authors7</a></h3></p>
+
+   </div>
+
+ </div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<br>
+
+
+
+<div style="display: flex; flex-direction: row; "> 
+
+
+<div class="boxed2">
+
+
+
+ <div class="imageContainer">
+
+<img src="https://i.pinimg.com/originals/4c/0c/a1/4c0ca1235a372e40f57a670415e67ed8.jpg" alt="Author" style="width:100%">
+
+  <div class="centered8">
+
+   <p><h3><a href="{% url 'salvetei_view' %}">Authors8</a></h3></p>
+
+   </div>
+
+ </div>
+
+
+</div>
+
+
+
+
+<div class="boxed2">
+
+
+
+ <div class="imageContainer">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRR2QCFwie4PSfiI22b8q-K4cJYzVcCWdkOlQ&amp;usqp=CAU" alt="Author" style="width:100%">
+
+  <div class="centered9">
+
+   <p><h3><a href="{% url 'salvetei_view' %}" >Authors9</a></h3></p>
+
+   </div>
+
+ </div>
+
+
+</div>
+
+
+
+
+<div class="boxed2">
+
+
+
+ <div class="imageContainer">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTcPA-Rs5xiuIyIs2W9ikWP9YqqsdI3UjnoGw&amp;usqp=CAU" alt="Author" style="width:100%">
+
+  <div class="centered10">
+
+   <p><h3><a href="{% url 'salvetei_view' %}">Authors10</a></h3></p>
+
+   </div>
+
+ </div>
+
+
+</div>
+
+
+
+<div class="boxed2">
+
+
+
+ <div class="imageContainer">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR3zbl4Ag0Y76KBK4D8HhUsmhHc9l9kbKIiDQ&amp;usqp=CAU" alt="Author" style="width:100%">
+
+  <div class="centered11">
+
+   <p><h3><a href="{% url 'salvetei_view' %}">Authors11</a></h3></p>
+
+   </div>
+
+ </div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,799 @@
+{% extends 'translators.html' %}
+
+{% load static %}
+
+
+
+
+
+{% block main %}
+
+<style>
+
+/*li {
+  text-indent: 50px;
+}
+*/
+
+ul {
+  padding-left: 80px;
+}
+
+
+h6 {
+  padding-left: 83px;
+}
+
+
+.h3 {
+  padding-left: 100px;
+}
+
+.h7 {
+  padding-left: 78px;
+}
+
+
+.nextto{
+  display: inline-block;
+  width: 30%;
+
+}
+
+
+
+/* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 70px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: #aed6f1;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: #a9cce3;
+}
+
+
+
+  .boxed {
+  border: 1px  #a3e4d7;
+  width:300px;
+  height:250px;
+} 
+
+
+
+
+.pull-right{
+ 
+  padding-top: 3.8px;
+  padding-left: 50px;
+  width:300px;
+}
+
+.pull-right1{
+ 
+/*  padding-top: 3.8px;
+*/  padding-left: 50px;
+  width:300px;
+}
+
+
+
+
+
+</style>
+
+
+ <div class="split left">
+  <div class="centered">
+
+ <br>
+ <br>
+
+ <ul>
+<h5>{{obj.name}}</h5>
+
+<br>
+<br>
+
+    Works
+
+
+ <br>
+ <br>
+
+<!-- <p><img src = "{{obj.item_1.url}}" width=200 height=225></p>
+ 
+
+<br>
+
+
+<p><img src = "{{obj.item_2.url}}" width=200 height=225></p>
+
+
+ <br> -->
+
+
+
+{% if obj.item_1 and obj.item_2 %}
+
+<div style="display: flex; flex-direction: row; "> 
+
+
+
+<a href="{{obj.item_2.url}}" target="_blank" >
+
+
+    <img src="{{obj.item_1.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a> 
+
+
+
+  <p><h3> &ensp;  &ensp;  &ensp; &diams; {{  obj.work_1}} &diams;
+
+
+  <div class="nextto">
+
+
+<div class="boxed">
+
+  <p><h6>&ensp;  &ensp;  &ensp;{{obj.work_1_description}}</h6></p>
+
+
+
+<h6><a href="{%url 'buy_item_work_view' id1=obj.id  id2=1 %}"class="btn btn-info">Buy item</a></h6>
+
+</div>
+
+ </div>
+
+ </h3></p>
+
+
+</div>
+
+{% endif %}
+
+<br>
+
+
+{% if obj.item_3 and obj.item_4 %}
+
+
+<div style="display: flex; flex-direction: row; "> 
+
+
+<a href="{{obj.item_4.url}}" target="_blank" >
+    <img src="{{obj.item_3.url}}" alt="{{image.name}}" width=200 height=225><br>
+</a>
+
+  <p><h3> &ensp;  &ensp;  &ensp; &diams; {{  obj.work_2}} &diams;
+
+
+    <div class="nextto">
+
+
+<div class="boxed">
+
+    <p><h6>&ensp;  &ensp;  &ensp;{{obj.work_2_description}}</h6></p>
+    
+    <h6><a href="{%url 'buy_item_work_view' id1=obj.id id2=2 %}"class="btn btn-info">Buy item</a></h6>
+
+    
+
+
+</div>
+
+</div>
+
+
+
+  </h3></p>
+
+
+</div>
+
+{% endif %}
+
+<br>
+
+
+
+
+
+{% if obj.item_5 and obj.item_6 %}
+
+<div style="display: flex; flex-direction: row; "> 
+
+
+
+<a href="{{obj.item_6.url}}" target="_blank" >
+
+    <img src="{{obj.item_5.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+
+<h3> &ensp;  &ensp;  &ensp; &diams; {{  obj.work_3}} &diams;
+
+
+
+  <div class="nextto">
+
+
+<div class="boxed">
+
+
+  <p><h6>&ensp;  &ensp;  &ensp;{{obj.work_3_description}}</h6></p>
+
+<h6><a href="{%url 'buy_item_work_view' id1=obj.id id2=3 %}"class="btn btn-info">Buy item</a></h6>
+
+
+</div>
+
+</div>
+
+
+</h3></p>
+
+
+
+</div>
+
+
+{% endif %}
+
+<br>
+
+
+
+{% if obj.item_7 and obj.item_8 %}
+
+
+<div style="display: flex; flex-direction: row; "> 
+
+
+
+
+<a href="{{obj.item_8.url}}" target="_blank" >
+
+    <img src="{{obj.item_7.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+
+<p><h3> &ensp;  &ensp;  &ensp; &diams; {{  obj.work_4}} &diams;
+
+  <div class="nextto">
+
+
+<div class="boxed">
+
+
+  <p><h6>&ensp;  &ensp;  &ensp;{{obj.work_4_description}}</h6></p>
+
+<h6><a href="{%url 'buy_item_work_view' id1=obj.id id2=4 %}"class="btn btn-info">Buy item</a></h6>
+
+
+</div>
+
+</div>
+
+</h3></p>
+
+</div>
+
+{% endif %}
+
+<br>
+
+
+{% if obj.item_9 and obj.item_10 %}
+
+<div style="display: flex; flex-direction: row; "> 
+
+
+
+<a href="{{obj.item_10.url}}" target="_blank" >
+
+    <img src="{{obj.item_9.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+
+<h3> &ensp;  &ensp;  &ensp; &diams; {{  obj.work_5}} &diams;
+
+
+ <div class="nextto">
+
+
+<div class="boxed">
+
+
+  <p><h6>&ensp;  &ensp;  &ensp;{{obj.work_5_description}}</h6></p>
+
+<h6><a href="{%url 'buy_item_work_view' id1=obj.id id2=5 %}"class="btn btn-info">Buy item</a></h6>
+
+
+</div>
+
+</div>
+
+
+</h3></p>
+
+
+</div>
+
+{% endif %}
+
+<br>
+
+
+{% if obj.item_11 and obj.item_12 %}
+
+
+<div style="display: flex; flex-direction: row; "> 
+
+
+
+
+<a href="{{obj.item_12.url}}" target="_blank" >
+
+    <img src="{{obj.item_11.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+
+<h3> &ensp;  &ensp;  &ensp; &diams; {{  obj.work_6}} &diams;
+
+
+ <div class="nextto">
+
+
+<div class="boxed">
+
+
+  <p><h6>&ensp;  &ensp;  &ensp;{{obj.work_6_description}}</h6></p>
+
+<h6><a href="{%url 'buy_item_work_view' id1=obj.id id2=6 %}"class="btn btn-info">Buy item</a></h6>
+
+</div>
+
+</div>
+
+
+</h3></p>
+
+</div>
+
+{% endif %}
+
+
+<br>
+
+
+{%if obj.item_13 and obj.item_14%}
+
+<div style="display: flex; flex-direction: row; "> 
+
+
+
+
+<a href="{{obj.item_14.url}}" target="_blank" >
+
+    <img src="{{obj.item_13.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+
+<p><h3> &ensp;  &ensp;  &ensp; &diams; {{  obj.work_7}} &diams;
+
+
+ <div class="nextto">
+
+
+<div class="boxed">
+
+
+  <p><h6>&ensp;  &ensp;  &ensp;{{obj.work_7_description}}</h6></p>
+
+<h6><a href="{%url 'buy_item_work_view' id1=obj.id id2=7 %}"class="btn btn-info">Buy item</a></h6>
+
+
+</div>
+
+</div>
+
+</h3></p>
+
+
+</div>
+
+{% endif %}
+
+
+
+
+{%if obj.item_15 and obj.item_16%}
+
+<div style="display: flex; flex-direction: row; "> 
+
+
+
+
+<a href="{{obj.item_16.url}}" target="_blank" >
+
+    <img src="{{obj.item_15.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+
+<p><h3> &ensp;  &ensp;  &ensp; &diams; {{  obj.work_8}} &diams;
+
+
+ <div class="nextto">
+
+
+<div class="boxed">
+
+
+  <p><h6>&ensp;  &ensp;  &ensp;{{obj.work_8_description}}</h6></p>
+
+<h6><a href="{%url 'buy_item_work_view' id1=obj.id id2=7 %}"class="btn btn-info">Buy item</a></h6>
+
+
+</div>
+
+</div>
+
+</h3></p>
+
+
+</div>
+
+{% endif %}
+
+</ul>
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="split right">
+  <div class="centered">
+  	<br>
+   <h6>
+
+<!-- {% for item in obj.works_sorted %}
+
+<p>{{item}}</p>
+
+{% endfor %}
+
+ -->
+
+
+ Cards
+
+ <br>
+<br>
+ 
+
+
+
+<div class="pull-right">
+
+  {%if obj.card_7%}
+
+
+   <a href="{{obj.card_7.url}}" target="_blank" >
+
+    <img src="{{obj.card_7.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+
+
+<br>
+
+<div class = "pull-right1">
+<h7><a href="{%url 'buy_item_card_view' id1=obj.id id2=7 %}"class="btn btn-info">Buy item</a></h7>
+
+</div>
+
+{% endif %}
+
+<br>
+
+<br>
+
+{% if obj.card_8 %}
+
+   <a href="{{obj.card_8.url}}" target="_blank" >
+
+    <img src="{{obj.card_8.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+
+
+<br>
+
+<div class = "pull-right1">
+<h7><a href="{%url 'buy_item_card_view' id1=obj.id id2=8 %}"class="btn btn-info">Buy item</a></h7>
+
+</div>
+
+
+{% endif %}
+
+<br>
+<br>
+
+
+{% if obj.card_9 %}
+ <a href="{{obj.card_9.url}}" target="_blank" >
+
+    <img src="{{obj.card_9.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+
+</a>
+
+<br>
+
+<div class = "pull-right1">
+<h7><a href="{%url 'buy_item_card_view' id1=obj.id id2=9 %}"class="btn btn-info">Buy item</a></h7>
+
+</div>
+
+{% endif %}
+
+
+{% if obj.card_10 %}
+
+<br>
+<br>
+
+
+ <a href="{{obj.card_10.url}}" target="_blank" >
+
+    <img src="{{obj.card_10.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+<br>
+
+<div class = "pull-right1">
+<h7><a href="{%url 'buy_item_card_view' id1=obj.id id2=10 %}"class="btn btn-info">Buy item</a></h7>
+
+</div>
+
+{% endif %}
+
+<br>
+<br>
+
+
+{% if obj.card_11 %}
+
+ <a href="{{obj.card_11.url}}" target="_blank" >
+
+    <img src="{{obj.card_11.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+<br>
+
+<div class = "pull-right1">
+<h7><a href="{%url 'buy_item_card_view' id1=obj.id id2=11 %}"class="btn btn-info">Buy item</a></h7>
+
+</div>
+
+{% endif %}
+
+<br>
+<br>
+
+{% if obj.card_12 %}
+
+ <a href="{{obj.card_12.url}}" target="_blank" >
+
+    <img src="{{obj.card_12.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+<br>
+
+<div class = "pull-right1">
+<h7><a href="{%url 'buy_item_card_view' id1=obj.id id2=12 %}"class="btn btn-info">Buy item</a></h7>
+
+</div>
+
+{% endif %}
+
+
+
+</div>
+
+
+{% if obj.card_1 %}
+
+
+  <a href="{{obj.card_1.url}}" target="_blank" >
+
+    <img src="{{obj.card_1.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+<br>
+
+<div class = "pull-right1">
+<h7><a href="{%url 'buy_item_card_view' id1=obj.id id2=1 %}"class="btn btn-info">Buy item</a></h7>
+
+</div>
+
+{% endif %}
+
+<br>
+<br>
+
+
+{% if obj.card_2 %}
+
+ <a href="{{obj.card_2.url}}" target="_blank" >
+
+    <img src="{{obj.card_2.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+<br>
+
+<div class = "pull-right1">
+<h7><a href="{%url 'buy_item_card_view' id1=obj.id id2=2 %}"class="btn btn-info">Buy item</a></h7>
+
+</div>
+
+
+{% endif %}
+
+<br>
+<br>
+
+
+
+{% if obj.card_3 %}
+ <a href="{{obj.card_3.url}}" target="_blank" >
+
+    <img src="{{obj.card_3.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+
+</a>
+
+
+<br>
+
+<div class = "pull-right1">
+<h7><a href="{%url 'buy_item_card_view' id1=obj.id id2=3 %}"class="btn btn-info">Buy item</a></h7>
+
+</div>
+
+{% endif %}
+
+<br>
+<br>
+
+
+{% if obj.card_4 %}
+
+ <a href="{{obj.card_4.url}}" target="_blank" >
+
+    <img src="{{obj.card_4.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+<br>
+
+
+<div class = "pull-right1">
+<h7><a href="{%url 'buy_item_card_view' id1=obj.id id2=4 %}"class="btn btn-info">Buy item</a></h7>
+
+</div>
+
+{% endif %}
+
+<br>
+<br>
+
+
+{% if obj.card_5 %}
+
+ <a href="{{obj.card_5.url}}" target="_blank" >
+
+    <img src="{{obj.card_5.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+<br>
+
+<div class = "pull-right1">
+<h7><a href="{%url 'buy_item_card_view' id1=obj.id id2=5 %}"class="btn btn-info">Buy item</a></h7>
+
+</div>
+
+{% endif %}
+
+
+<br>
+<br>
+
+{% if obj.card_6 %}
+
+ <a href="{{obj.card_6.url}}" target="_blank" >
+
+    <img src="{{obj.card_6.url}}" alt="{{image.name}}" width=200 height=225><br>
+
+</a>
+
+<br>
+
+
+<div class = "pull-right1">
+<h7><a href="{%url 'buy_item_card_view' id1=obj.id id2=6 %}"class="btn btn-info">Buy item</a></h7>
+
+</div>
+
+{% endif %}
+
+
+
+{% endblock %}
+
+
+
+   </h6>
+  </div>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

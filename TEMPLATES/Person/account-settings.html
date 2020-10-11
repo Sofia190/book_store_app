@@ -1,0 +1,38 @@
+{% extends 'index_simple_layout.html' %}
+
+
+
+{% block main %}
+
+
+
+
+
+
+
+<h1>Account settings</h1>
+
+<br>
+<br>
+
+
+<form method='POST' class="form-style-8" action=".">{% csrf_token %}
+
+<ul>
+
+
+
+     {{form.as_p}}
+    
+	
+
+
+<input type='submit' value='submit'>
+
+ </ul>
+
+
+
+
+
+{% endblock %}

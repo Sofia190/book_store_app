@@ -1,0 +1,95 @@
+ {% extends 'index_simple_layout.html' %}
+
+
+
+{% block main %}
+
+
+ <style>
+
+  
+.panel-footer{
+  background-color: #f2f3f4  ;
+  height: 500px;
+  border-color:   #f2f3f4  ;
+  color: #FFFFFF;
+  max-width: 1200px;
+  
+
+ }
+
+
+
+
+/*   .list-group-item {   background-color:#f8f9f9;
+                        height:150px;
+                      border-color: #f8f9f9;
+                      color: #FFFFFF;
+                      max-width: 1200px;  }*/
+
+
+h5 { color:  #1f618d; }
+
+
+ </style>
+
+
+
+
+<h1> {{obj.name}} </h1>
+
+
+
+<br>
+
+
+<div class="row">
+    <div class="col-lg-12 col-lg-offset-0">
+     
+    
+      <div class="panel-footer">
+
+
+  <h5>Are you sure you want to delete your account?</h5>
+
+
+
+                      <span class="pull-left">
+                      
+
+                           <form method="POST">
+                            {% csrf_token %}
+                           <button type="submit" name="yes" class="btn btn-info">Delete</button>
+                            </form>
+
+                           <br>
+
+
+                           <form method="POST">
+                            {% csrf_token %}
+                           <button type="submit" name="no" class="btn btn-info">Keep account</button>
+                            </form>
+
+
+
+                       
+                       
+                     </span>
+
+
+
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock main %}

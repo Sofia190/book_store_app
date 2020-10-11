@@ -1,0 +1,147 @@
+{% extends 'translators.html' %}
+
+
+
+
+
+
+{% block main %}
+
+<style>
+
+/*li {
+  text-indent: 50px;
+}
+*/
+
+ul {
+  padding-left: 80px;
+}
+
+
+h6 {
+  padding-left: 20px;
+}
+
+
+
+/* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 70px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: #aed6f1;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: #a9cce3;
+}
+
+
+
+
+
+
+
+</style>
+
+
+ <div class="split left">
+  <div class="centered">
+
+ <br>
+ <br>
+
+ <ul>
+<h5>{{obj.name}}</h5>
+
+<p>{{obj.location}}, {{obj.birth_date}}</p></ul>
+
+<br>
+
+
+<ul><h5>Most important subjects:</h5>
+<br>
+<ul>
+
+<li><p>{{obj.subject_1}}</p> </li>
+
+    <li><p>{{obj.subject_2}}</p></li>
+
+    <li><p>{{obj.subject_3}}</p></li>
+
+</ul>
+</ul>
+</div>
+</div>
+
+
+
+
+
+<div class="split right">
+  <div class="centered">
+  	<br>
+   <h6>
+
+{% for item in obj.works_sorted %}
+
+<p>{{item}}</p>
+
+{% endfor %}
+
+
+
+
+
+   </h6>
+  </div>
+</div> 
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

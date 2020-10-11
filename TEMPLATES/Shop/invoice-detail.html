@@ -1,0 +1,182 @@
+
+
+{% load mathfilters %}
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+
+{% block main %}
+
+<style>
+
+ul {
+  padding-left: 15px;
+}
+
+
+
+</style>
+
+
+<div class="row">
+    <div class="col-lg-12 col-lg-offset-0">
+     
+    
+      <div class="panel-footer">
+
+
+
+<ul>
+
+
+<h5>Invoice</h5>
+
+<br>
+
+Nr. {{number}}
+
+<br>
+
+From : {{from_person}}
+
+<br>
+
+Seller address: {{from_person_address}}
+
+<br>
+
+To: {{to_person}}
+
+<br>
+
+Address : {{to_person_address}}
+
+<br>
+
+Date: {{date}}
+
+<br>
+
+
+Term: {{term}}
+
+<br>
+
+ <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+
+
+
+
+<h5> Your order contains these articles</h5>
+
+ <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+<br>
+
+{% if var1 %}
+
+
+{% for work in var1.works.all %}
+
+
+
+<p>{{work.id}} &ensp;  &ensp;  &ensp;  &ensp;  &ensp;  &ensp; {{work.name}}</p>
+
+{% endfor %}
+
+
+
+  {% for card in var1.cards.all %}
+
+    <p>{{card.id}} &ensp;  &ensp;  &ensp;  &ensp;  &ensp;  &ensp; {{card.name}}</p>
+
+{% endfor %}
+
+
+
+{% endif %}
+
+
+<br>
+
+<br>
+
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+
+
+<p>Total price of the orders: {{var1.value_total_price_items}} $   </p>
+
+<p>Total price of works: {{var1.value_total_price_works}} $   </p>
+   
+<p>Total price of cards: {{var1.value_total_price_cards}} $   <p>
+
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+
+
+
+<p>Details of the orders</p>
+
+
+<br>
+
+
+    <li class="list-group-item">
+
+{% if var1 %}
+
+
+<p> {{var1.id}}  &ensp;  &ensp;  &ensp;  &ensp;  &ensp;  &ensp;   {{var1.retrieve_items_price}}$  &ensp;  &ensp;  &ensp;  &ensp;  &ensp;  &ensp; {{var1.date_field}} 
+
+&ensp;  &ensp;  &ensp;  &ensp;  &ensp;  &ensp;
+{{var1.works.count| addition:var1.cards.count}}
+
+
+</p> 
+
+
+
+
+{% endif %}
+
+
+
+</li>
+
+
+</ul>
+
+       </div>
+
+     </div>
+
+   </div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
