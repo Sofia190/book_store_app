@@ -42,7 +42,6 @@ def buy_item_work_view(request, id1, id2 ):
 
     print("id", obj1.id)
 
-    # var = Orders.objects.all()
     obj1.user=request.user
 
   
@@ -61,7 +60,6 @@ def buy_item_work_view(request, id1, id2 ):
     var1 = obj.translator.all().first().id
     var2 = obj.translator.all().last().id
 
-    # print(var1)
 
     if var1 != id1:
         obj.translator.remove(obj.translator.all().first())
@@ -114,7 +112,6 @@ def buy_item_card_view(request, id1, id2):
 
     print("id", obj1.id)
 
-    # var = Orders.objects.all()
     obj1.user=request.user
 
 
@@ -247,8 +244,6 @@ def  view_order_details(request, id):
 
     var = Orders.objects.all()
 
-    # var.orders_associated = Orders.objects.retrieve_orders_associated(request)
-
    
     var1 = Orders.objects.retrieve_orders_associated(request).get(id=id)
 
@@ -287,8 +282,6 @@ class GeneratePdf(View):
             var = Orders.objects.all()
 
             obj = Orders.objects.first()
-
-            # var.orders_associated = Orders.objects.retrieve_orders_associated(request)
 
             var.orders_associated = Orders.objects.retrieve_orders_not_returned(request)
 
@@ -332,8 +325,6 @@ def GeneratePdf_detail(request,id,*args, **kwargs):
 
         if request.user.is_authenticated:
 
-            # var = Orders.objects.all()
-
             obj = Orders.objects.first()
 
             var1 = Orders.objects.retrieve_orders_associated(request).get(id=id)
@@ -348,8 +339,6 @@ def GeneratePdf_detail(request,id,*args, **kwargs):
             var = request.user
 
             var2 = Orders.objects.get(id=id).validity_date + timedelta(days=1)
-
-            # print("var1 items", var1.value_total_price_items)
       
 
             data = { 'date' : date.today(),
@@ -528,7 +517,6 @@ def return_items_associated(request):
 
 def returned_items_view(request):
 
-    #var  = Orders.objects.retrieve_orders_associated(request)
 
     var = Returned_items.objects.filter(user=request.user)
 
@@ -569,9 +557,9 @@ def render_invoice(request):
         return render(request, "index_simple_layout_login.html")
 
 
+    
 
 
-#@login_required
 def update_order(request, id):
 
     obj=get_object_or_404(Orders, id=id)
