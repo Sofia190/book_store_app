@@ -33,6 +33,8 @@ class Item_to_buy_work(models.Model):
 	shipping_period = models.IntegerField(default=0)
 	translator = models.ManyToManyField(Translator, blank=True)
 
+	
+	
 
 
 class Item_to_buy_card(models.Model):
