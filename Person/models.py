@@ -57,32 +57,3 @@ class MailMessage(models.Model):
 
 
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
