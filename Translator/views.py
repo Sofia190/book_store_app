@@ -4,12 +4,6 @@ from django.shortcuts import render, redirect
 
 from Translator.models import Translator
 
-#from django.http import FileResponse
-
-# import os 
-
-# from django.conf import settings
-
 
 
 
@@ -90,8 +84,6 @@ def works_list_view(request):
 
 
 
-
-
 def translators_view_20(request):
 	
 
@@ -103,7 +95,6 @@ def translators_view_20(request):
     var.qs_with_subjects_sorted = Translator.objects.retrieve_sorted_subjects_20()
 
     var.qs_with_works_sorted = Translator.objects.retrieve_sorted_works_20()
-
 
 
     print(var.qs_with_subjects_sorted)
@@ -233,19 +224,6 @@ def contact(request):
     else:
 
         return render(request, "index_simple_layout_login.html")
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
