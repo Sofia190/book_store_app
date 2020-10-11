@@ -7,7 +7,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 
-User = settings.AUTH_USER_MODEL   #auth.User
+User = settings.AUTH_USER_MODEL   
 
 from django.utils import timezone
 
@@ -29,6 +29,8 @@ class AccountSettings(models.Model):
 
 	display_the_most_recent_items_at_the_top = models.BooleanField(default=True)
 
+	
+	
 
 
 class ContactInformation(models.Model):
@@ -37,7 +39,6 @@ class ContactInformation(models.Model):
 	address = models.TextField(default='your billing address')
 	phone_number = models.CharField(max_length=35, default='your phone number')
 	email_address = models.CharField(max_length=200, default='your email address ')
-
 
 
 
