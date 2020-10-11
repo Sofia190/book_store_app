@@ -332,25 +332,3 @@ def display_mail_messages(request):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
