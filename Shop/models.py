@@ -46,9 +46,7 @@ class Item_to_buy_card(models.Model):
 	translator = models.ManyToManyField(Translator, blank=True)
 
 
-
-
-
+	
 
 
 class OrdersQuerySet(models.query.QuerySet):
@@ -66,8 +64,6 @@ class OrdersModelManager(models.Manager):
 
 	def get_queryset(self):
 		    return OrdersQuerySet(self.model, using=self._db)
-
-
 
 
 
@@ -95,8 +91,6 @@ class OrdersModelManager(models.Manager):
 			var = l_price
 
 			return var
-
-
 
 
 
@@ -259,9 +253,6 @@ class OrdersModelManager(models.Manager):
 
 
 
-
-
-   
   
 
 
@@ -341,34 +332,6 @@ class Returned_items(models.Model):
 	count = models.IntegerField(default=0)
 	return_date = models.DateField(auto_now=False, auto_now_add=False, default=timezone.now())
    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
