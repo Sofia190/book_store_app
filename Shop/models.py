@@ -35,6 +35,8 @@ class Item_to_buy_work(models.Model):
 
 
 
+	
+	
 class Item_to_buy_card(models.Model):
 
 	name = models.CharField(max_length=270)
@@ -53,8 +55,6 @@ class Item_to_buy_card(models.Model):
 
 class OrdersQuerySet(models.query.QuerySet):
 
-	# def active(self):
-	# 	return self.filter(active=True)
 
 	def Order_name_items(self, value):
 		return self.filter(total_price__gt=20)
@@ -90,6 +90,8 @@ class OrdersModelManager(models.Manager):
 	# 		return var
 
 
+	
+	
 	def calculate_total_price(self, request):
 
 			qs = self.get_queryset().filter(user=request.user)
@@ -156,6 +158,7 @@ class OrdersModelManager(models.Manager):
 
 
 
+		
 	def calculate_total_price_works_detail(self, request, id):
 
 			qs = self.get_queryset().filter(user=request.user).get(id=id)
@@ -294,8 +297,6 @@ class OrdersModelManager(models.Manager):
 
 
 
-
-
    
   
 
@@ -347,11 +348,11 @@ class Orders(models.Model):
 
 
 
-	def cancel_after_end_date(request):
+	#def cancel_after_end_date(request):
 
-		if (self.validity_date + timedelta(days=1) == timezone.now()):
+		#if (self.validity_date + timedelta(days=1) == timezone.now()):
 
-			self.delete()
+			#self.delete()
 
 
 
@@ -377,33 +378,6 @@ class Returned_items(models.Model):
 	count = models.IntegerField(default=0)
 	return_date = models.DateField(auto_now=False, auto_now_add=False, default=timezone.now())
    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
