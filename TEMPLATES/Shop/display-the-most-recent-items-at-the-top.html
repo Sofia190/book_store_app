@@ -1,0 +1,316 @@
+{% extends 'index_simple_layout.html' %}
+
+{% load mathfilters %}
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+
+{% block main %}
+
+<style>
+
+ul {
+  padding-left: 15px;
+}
+
+
+
+</style>
+
+
+<div class="row">
+    <div class="col-lg-12 col-lg-offset-0">
+     
+    
+      <div class="panel-footer">
+
+{% if var.var_the_most_recent.all%}
+
+ <span class="pull-right">
+
+
+    <a href="request-invoice/" class="btn btn-default btn-xs">Download invoice</a> &nbsp;
+
+
+
+   </span> 
+
+{% endif %}
+
+
+
+<ul>
+
+
+
+
+<h5> Your orders contain these articles</h5>
+
+ <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+<br>
+
+{% if var.var_the_most_recent.all %}
+
+<p>Order nr. </p>
+
+{% for item in var.var_the_most_recent.all %}
+
+
+{% for work in item.works.all %}
+
+
+
+<p>{{item.id}} &ensp;  &ensp;  &ensp;  &ensp;  &ensp;  &ensp; {{work.name}}</p>
+
+{% endfor %}
+
+
+
+	{% for card in item.cards.all %}
+
+		<p>{{item.id}} &ensp;  &ensp;  &ensp;  &ensp;  &ensp;  &ensp; {{card.name}}</p>
+
+{% endfor %}
+
+{% endfor %}
+
+
+{% else %}
+
+
+{% if messages %}
+<!-- <ul class="messages">
+ -->   {% for message in messages %}
+   <!--  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li> -->
+   {{message}} <br>
+    {% endfor %}
+<!-- </ul>
+ -->{% endif %}
+
+ <br>
+
+{% endif %}
+
+
+<br>
+
+<br>
+
+{% if var.var_the_most_recent.all %}
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+
+<p>Total price of the orders: {{var.value_total_price_items}} $   </p>
+
+<p>Total price of works: {{var.value_total_price_works}} $   </p>
+   
+<p>Total price of cards: {{var.value_total_price_cards}} $   <p>
+
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+
+
+
+{% if messages %}
+<!-- <ul class="messages">
+ -->   {% for message in messages %}
+   <!--  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li> -->
+   {{message}} <br>
+    {% endfor %}
+<!-- </ul>
+ -->{% endif %}
+
+ <br>
+
+
+
+<p>Details of the orders</p>
+
+
+<br>
+
+
+    <li class="list-group-item">
+
+
+{% if var.var_the_most_recent.all %}
+
+{% for item in var.var_the_most_recent.all%}
+
+
+
+<p> {{item.id}}  &ensp;  &ensp;  &ensp;  &ensp;  &ensp;  &ensp;   {{item.retrieve_items_price}}
+
+<!--   {{item.total_price}}  -->$  &ensp;  &ensp;  &ensp;  &ensp;  &ensp;  &ensp; {{item.date_field}} 
+
+&ensp;  &ensp;  &ensp;  &ensp;  &ensp;  &ensp;
+<!-- {{item.works.count| addition:item.cards.count}}
+ -->
+{{item.items_count}}
+
+</p> 
+
+
+<span class='pull-left'>
+
+<br>
+<br>
+<br>
+<br>
+{%if item.returned != True %}
+
+<a href="{% url 'return_item_view' id=item.id %}" class="btn btn-info btn-xs">Return items</a> &nbsp;
+
+{% endif %}
+
+</span>
+
+
+
+
+                       <span class="pull-right">
+  
+<!-- 
+                           <form method="POST">
+                            {% csrf_token %}
+                           <a href type="submit" name="rate" class="btn btn-default">Invoice</a>
+                            </form>
+
+                            <br>
+                            <br> -->
+                        
+
+
+                         <!--   <form method="POST">
+                            {% csrf_token %}
+                           <button type="submit" name="delete" class="btn btn-default">Cancel</a></button>
+                            </form>
+
+ -->
+
+
+              {%if item.returned != True %}
+
+              <a href="{% url 'GeneratePdf_detail' id=item.id %}" class="btn btn-default btn-xs">Invoice</a> &nbsp;
+
+
+              <br>
+              <br>
+
+
+
+              <a href="{% url 'update_order' id=item.id %}" class="btn btn-default btn-xs">Update</a> &nbsp;
+
+
+              <br>
+              <br>
+
+
+
+              <a href="{% url 'order_delete_view' id=item.id %}" class="btn btn-default btn-xs">Cancel</a> &nbsp;
+
+
+              {% endif %}
+              <br>
+              <br>
+
+    
+
+                       
+                       
+                     </span>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+
+
+
+{% endfor %}
+
+{% endif %}
+
+{% endif %}
+
+
+
+
+{% if var.var_total_price.all%}
+
+
+
+<span class='pull-left'>
+
+
+<a href="{% url 'return_items_associated' %}" class="btn btn-info btn-xs">Return items on this page</a> &nbsp;
+
+
+</span>
+
+
+
+
+
+
+ <span class="pull-right">
+
+
+
+    <a href="cancel-orders/" class="btn btn-default btn-xs">Cancel orders</a> &nbsp;
+
+
+   </span> 
+
+<br>
+
+<br>
+
+<br>
+
+
+
+{% endif %}
+
+
+
+
+
+</li>
+
+
+</ul>
+
+       </div>
+
+     </div>
+
+   </div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
